@@ -301,14 +301,16 @@ async def user_settings(client, message):
     /cmd -s lsuffix
 ➲ <b>Leech Filename Remname :</b>
     /cmd -s lremname
-# ➲ <b>Leech Metadata Text :</b>
-    # /cmd -s lmeta
 ➲ <b>Leech Filename Caption :</b>
     /cmd -s lcaption
 ➲ <b>YT-DLP Options :</b>
     /cmd -s yt_opt
 ➲ <b>Leech User Dump :</b>
     /cmd -s ldump''')
+                
+# ➲ <b>Leech Metadata Text :</b>
+    # /cmd -s lmeta
+            
     else:
         from_user = message.from_user
         handler_dict[from_user.id] = False
