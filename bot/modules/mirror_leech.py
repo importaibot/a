@@ -35,6 +35,7 @@ from bot.modules.gen_pyro_sess import get_decrypt_key
 
 @new_task
 async def _mirror_leech(client, message, isQbit=False, isLeech=False, sameDir=None, bulk=[]):
+    await send_react(message)
     text = message.text.split('\n')
     input_list = text[0].split(' ')
 
