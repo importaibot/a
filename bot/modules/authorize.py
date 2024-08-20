@@ -8,9 +8,11 @@ from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.ext_utils.db_handler import DbManger
 from bot.helper.ext_utils.bot_utils import update_user_ldata
+from bot.helper.ext_utils.send_react import send_react
 
 
 async def authorize(client, message):
+    await send_react(message)
     msg = message.text.split()
     tid_ = ""
     if len(msg) > 1:
@@ -49,6 +51,7 @@ async def authorize(client, message):
 
 
 async def unauthorize(client, message):
+    await send_react(message)
     msg = message.text.split()
     tid_ = ""
     if len(msg) > 1:
@@ -79,6 +82,7 @@ async def unauthorize(client, message):
 
 
 async def addSudo(client, message):
+    await send_react(message)
     id_ = ""
     msg = message.text.split()
     if len(msg) > 1:
@@ -99,6 +103,7 @@ async def addSudo(client, message):
 
 
 async def removeSudo(client, message):
+    await send_react(message)
     id_ = ""
     msg = message.text.split()
     if len(msg) > 1:
@@ -119,6 +124,7 @@ async def removeSudo(client, message):
 
 
 async def addBlackList(_, message):
+    await send_react(message)
     id_ = ""
     msg = message.text.split()
     if len(msg) > 1:
@@ -139,6 +145,7 @@ async def addBlackList(_, message):
 
 
 async def rmBlackList(_, message):
+    await send_react(message)
     id_ = ""
     msg = message.text.split()
     if len(msg) > 1:
