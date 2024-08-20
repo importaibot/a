@@ -9,9 +9,11 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.message_utils import sendMessage, sendStatusMessage, deleteMessage
 from bot.helper.ext_utils.bot_utils import getDownloadByGid, MirrorStatus, bt_selection_buttons, sync_to_async
+from bot.helper.ext_utils.send_react import send_react
 
 
 async def select(client, message):
+    await send_react(message)
     user_id = message.from_user.id
     msg = message.text.split('_', maxsplit=1)
     if len(msg) > 1:
