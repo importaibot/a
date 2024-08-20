@@ -14,6 +14,7 @@ from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.message_utils import sendFile, sendMessage
 from bot.helper.ext_utils.bot_utils import new_task
+from bot.helper.ext_utils.send_react import send_react
 
 namespaces = {}
 
@@ -48,11 +49,13 @@ async def send(msg, message):
 
 @new_task
 async def evaluate(client, message):
+    await send_react(message)
     await send(await do(eval, message), message)
 
 
 @new_task
 async def execute(client, message):
+    await send_react(message)
     await send(await do(exec, message), message)
 
 
@@ -105,6 +108,7 @@ async def do(func, message):
 
 
 async def clear(client, message):
+    await send_react(message)
     log_input(message)
     global namespaces
     if message.chat.id in namespaces:
