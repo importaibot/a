@@ -10,6 +10,7 @@ from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.ext_utils.bot_utils import sync_to_async, new_task, get_telegraph_list, checking_access
+from bot.helper.ext_utils.send_react import send_react
 from bot.helper.themes import BotTheme
 
 
@@ -63,6 +64,7 @@ async def select_type(_, query):
 
 
 async def drive_list(_, message):
+    await send_react(message)
     args = message.text.split() if message.text else ['/cmd']
     if len(args) == 1:
         return await sendMessage(message, '<i>Send a search key along with command</i>')
