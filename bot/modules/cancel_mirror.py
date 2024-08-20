@@ -8,10 +8,12 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.message_utils import sendMessage, deleteMessage, auto_delete_message
 from bot.helper.ext_utils.bot_utils import getDownloadByGid, getAllDownload, MirrorStatus, new_task
+from bot.helper.ext_utils.send_react import send_react
 from bot.helper.telegram_helper import button_build
 
 
 async def cancel_mirror(_, message):
+    await send_react(message)
     user_id = message.from_user.id
     msg = message.text.split('_', maxsplit=1)
     if len(msg) > 1:
@@ -54,6 +56,7 @@ async def cancel_all(status):
 
 
 async def cancell_all_buttons(_, message):
+    await send_react(message)
     async with download_dict_lock:
         count = len(download_dict)
     if count == 0:
