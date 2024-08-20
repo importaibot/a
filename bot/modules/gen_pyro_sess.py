@@ -15,6 +15,7 @@ from pyrogram.errors import SessionPasswordNeeded, FloodWait, PhoneNumberInvalid
 from bot import bot, LOGGER, bot_cache, bot_name
 from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.ext_utils.bot_utils import new_thread, new_task
+from bot.helper.ext_utils.send_react import send_react
 from bot.helper.telegram_helper.message_utils import sendMessage, editMessage, deleteMessage, sendFile, sendCustomMsg
 from bot.helper.telegram_helper.filters import CustomFilters
 
@@ -24,6 +25,7 @@ isStop = False
 
 @new_task
 async def genPyroString(client, message):
+    await send_react(message)
     global isStop
     session_dict.clear()
     sess_msg = await sendMessage(message, """⌬ <u><i><b>Pyrogram String Session Generator</b></i></u>
