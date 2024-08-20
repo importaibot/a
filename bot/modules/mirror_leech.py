@@ -35,7 +35,6 @@ from bot.modules.gen_pyro_sess import get_decrypt_key
 
 @new_task
 async def _mirror_leech(client, message, isQbit=False, isLeech=False, sameDir=None, bulk=[]):
-    await send_react(message)
     text = message.text.split('\n')
     input_list = text[0].split(' ')
 
@@ -468,18 +467,22 @@ async def wzmlxcb(_, query):
 
 
 async def mirror(client, message):
+    await send_react(message)
     _mirror_leech(client, message)
 
 
 async def qb_mirror(client, message):
+    await send_react(message)
     _mirror_leech(client, message, isQbit=True)
 
 
 async def leech(client, message):
+    await send_react(message)
     _mirror_leech(client, message, isLeech=True)
 
 
 async def qb_leech(client, message):
+    await send_react(message)
     _mirror_leech(client, message, isQbit=True, isLeech=True)
 
 
