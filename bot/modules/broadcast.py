@@ -13,11 +13,13 @@ from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.ext_utils.bot_utils import new_task, get_readable_time
+from bot.helper.ext_utils.send_react import send_react
 
 bc_cache = {}
 
 @new_task
 async def broadcast(_, message):
+    await send_react(message)
     bc_id, forwarded, quietly, deleted, edited = '', False, False, False, False
     if not DATABASE_URL:
         return await sendMessage(message, 'DATABASE_URL not provided!')
