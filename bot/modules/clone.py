@@ -9,6 +9,7 @@ from json import loads, dumps as jdumps
 
 from bot import LOGGER, download_dict, download_dict_lock, categories_dict, config_dict, bot
 from bot.helper.ext_utils.task_manager import limit_checker, task_utils
+from bot.helper.ext_utils.send_react import send_react
 from bot.helper.mirror_utils.upload_utils.gdriveTools import GoogleDriveHelper
 from bot.helper.telegram_helper.message_utils import sendMessage, editMessage, deleteMessage, sendStatusMessage, delete_links, auto_delete_message, open_category_btns
 from bot.helper.telegram_helper.filters import CustomFilters
@@ -179,6 +180,7 @@ async def gdcloneNode(message, link, listen_up):
 
 @new_task
 async def clone(client, message):
+    await send_react(message)
     input_list = message.text.split(' ')
 
     arg_base = {'link': '', 
