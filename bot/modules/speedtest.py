@@ -8,9 +8,11 @@ from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.message_utils import sendMessage, deleteMessage, editMessage
 from bot.helper.ext_utils.bot_utils import get_readable_file_size, new_task
+from bot.helper.ext_utils.send_react import send_react
 
 @new_task
 async def speedtest(_, message):
+    await send_react(message)
     speed = await sendMessage(message, "<i>Initiating Speedtest...</i>")
     try:
         test = Speedtest()
