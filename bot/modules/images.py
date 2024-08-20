@@ -12,10 +12,12 @@ from bot.helper.ext_utils.bot_utils import handleIndex, new_task
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.ext_utils.db_handler import DbManger
+from bot.helper.ext_utils.send_react import send_react
 from bot.helper.telegram_helper.button_build import ButtonMaker
 
 @new_task
 async def picture_add(_, message):
+    await send_react(message)
     resm = message.reply_to_message
     editable = await sendMessage(message, "<i>Fetching Input ...</i>")
     if len(message.command) > 1 or resm and resm.text:
@@ -52,6 +54,7 @@ async def picture_add(_, message):
 
 
 async def pictures(_, message):
+    await send_react(message)
     if not config_dict['IMAGES']:
         await sendMessage(message, f"<b>No Photo to Show !</b> Add by /{BotCommands.AddImageCommand}")
     else:
