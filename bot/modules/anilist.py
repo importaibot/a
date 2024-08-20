@@ -7,6 +7,7 @@ from calendar import month_name
 from pycountry import countries as conn
 from urllib.parse import quote as q
 
+from bot.helper.ext_utils.send_react import send_react
 from bot import bot, LOGGER, config_dict, user_data
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
@@ -197,6 +198,7 @@ url = 'https://graphql.anilist.co'
 sptext = ""
 
 async def anilist(_, msg, aniid=None, u_id=None):
+    await send_react(msg)
     if not aniid:
         user_id = msg.from_user.id
         squery = (msg.text).split(' ', 1)
@@ -344,6 +346,7 @@ async def setAnimeButtons(client, query):
 
 
 async def character(_, message, aniid=None, u_id=None):
+    await send_react(message)
     global sptext
     rlp_mk = None
     if not aniid:
@@ -407,6 +410,7 @@ async def setCharacButtons(client, query):
 
 
 async def manga(_, message):
+    await send_react(message)
     search = message.text.split(' ', 1)
     if len(search) == 1:
         await sendMessage(message, '<b>Format :</b>\n<code>/manga</code> <i>[search manga]</i>') 
@@ -443,6 +447,7 @@ async def manga(_, message):
 
 
 async def anime_help(_, message):
+    await send_react(message)
     help_string = '''
 <u><b>🔍 Anime Help Guide</b></u>
 • /anime : <i>[search AniList]</i>
@@ -456,3 +461,5 @@ bot.add_handler(MessageHandler(manga, filters=command("manga") & CustomFilters.a
 bot.add_handler(MessageHandler(anime_help, filters=command(BotCommands.AnimeHelpCommand) & CustomFilters.authorized & ~CustomFilters.blacklisted))
 bot.add_handler(CallbackQueryHandler(setAnimeButtons, filters=regex(r'^anime')))
 bot.add_handler(CallbackQueryHandler(setCharacButtons, filters=regex(r'^cha')))
+
+
