@@ -23,6 +23,7 @@ from bot.helper.ext_utils.help_messages import YT_HELP_MESSAGE
 from bot.helper.ext_utils.bulk_links import extract_bulk_links
 
 
+
 @new_task
 async def select_format(_, query, obj):
     data = query.data.split()
@@ -522,10 +523,12 @@ async def _ytdl(client, message, isLeech=False, sameDir=None, bulk=[]):
 
 
 async def ytdl(client, message):
+    await send_react(message)
     _ytdl(client, message)
 
 
 async def ytdlleech(client, message):
+    await send_react(message)
     _ytdl(client, message, isLeech=True)
 
 
