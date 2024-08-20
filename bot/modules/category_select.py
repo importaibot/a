@@ -6,6 +6,7 @@ from time import time
 from bot import bot, bot_cache, categories_dict, download_dict, download_dict_lock
 from bot.helper.ext_utils.bot_utils import MirrorStatus, arg_parser, fetch_user_tds, fetch_user_dumps, getDownloadByGid, is_gdrive_link, new_task, sync_to_async, get_readable_time
 from bot.helper.ext_utils.help_messages import CATEGORY_HELP_MESSAGE
+from bot.helper.ext_utils.send_react import send_react
 from bot.helper.mirror_utils.upload_utils.gdriveTools import GoogleDriveHelper
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.button_build import ButtonMaker
@@ -14,6 +15,7 @@ from bot.helper.telegram_helper.message_utils import editMessage, sendMessage, o
 
 
 async def change_category(client, message):
+    await send_react(message)
     if not message.from_user:
         return
     user_id = message.from_user.id
