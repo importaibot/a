@@ -179,19 +179,52 @@ async def join_files(path):
                     await aioremove(f'{path}/{file_}')
 
 
+
 async def edit_metadata(listener, base_dir: str, media_file: str, outfile: str, metadata: str = ''):
-    cmd = [bot_cache['pkgs'][2], '-hide_banner', '-loglevel', 'error', '-ignore_unknown', '-i', media_file, '-metadata', f'title=Encoded By @Animes_Ocean', '-metadata:s:v',
-           f'title=Encoded By @Animes_Ocean', '-metadata:s:a', f'title=By @Animes_Ocean', '-metadata:s:s', f'title=By @Animes_Ocean', '-metadata', f'author=@CopyNinja_07', '-metadata', f'artist=@CopyNinja_07', '-map', '0:v:0?',
-           '-map', '0:a:?', '-map', '0:s:?', '-c:v', 'copy', '-c:a', 'copy', '-c:s', 'copy', outfile, '-y']
+    cmd = [
+        bot_cache["pkgs"][2],
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-ignore_unknown",
+        "-i", media_file,
+        "-map", "0:v:0?",
+        "-map", "0:a:?",
+        "-map", "0:s:?",
+        "-c:v", "copy",
+        "-c:a", "copy",
+        "-c:s", "copy",
+        "-metadata", f"title=Encoded By @{metadata}",
+        "-metadata:s:v", f"title=Encoded By @{metadata}",
+        "-metadata:s:a", f"title=By @{metadata}",
+        "-metadata:s:s", f"title=By @{metadata}",
+        "-metadata", f"author=@MadflixOfficials",
+        "-metadata", f"artist=@MadflixOfficials",
+        "-metadata", f"website=https://t.me/{metadata}",
+        "-metadata", "description=",
+        "-metadata", "copyright=",
+        "-metadata", "comment=",
+        "-metadata", "summary=",
+        outfile, "-y"
+    ]    
+    
     listener.suproc = await create_subprocess_exec(*cmd, stderr=PIPE)
     code = await listener.suproc.wait()
+    
     if code == 0:
         await clean_target(media_file)
         listener.seed = False
         await move(outfile, base_dir)
     else:
         await clean_target(outfile)
-        LOGGER.error('%s. Changing metadata failed, Path %s', await listener.suproc.stderr.read().decode(), media_file)
-
-
-                
+        LOGGER.error('%s. Changing metadata failed, Path %s', (await listener.suproc.stderr.read()).decode(), media_file)
+        
+        
+        
+        
+        
+        
+# Jishu Developer 
+# Don't Remove Credit 🥺
+# Telegram Channel @Madflix_Bots
+# Developer @JishuDeveloper
