@@ -1,4 +1,4 @@
-from random import choice
+"""from random import choice
 from bot import LOGGER, bot
 
 async def send_react(message):
@@ -42,3 +42,4 @@ async def send_react(message):
         
         
         
+"""
