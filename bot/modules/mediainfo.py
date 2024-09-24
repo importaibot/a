@@ -15,7 +15,7 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.message_utils import editMessage, sendMessage
 from bot.helper.ext_utils.bot_utils import cmd_exec
 from bot.helper.ext_utils.telegraph_helper import telegraph
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 
 
 async def gen_mediainfo(message, link=None, media=None, mmsg=None):
@@ -77,7 +77,7 @@ def parseinfo(out):
 
 
 async def mediainfo(_, message):
-    await send_react(message)
+    # await send_react(message)
     rply = message.reply_to_message
     help_msg = "<b>By replying to media:</b>"
     help_msg += f"\n<code>/{BotCommands.MediaInfoCommand[0]} or /{BotCommands.MediaInfoCommand[1]}" + " {media}" + "</code>"
