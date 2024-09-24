@@ -14,7 +14,7 @@ from bot.helper.mirror_utils.download_utils.direct_downloader import add_direct_
 from bot.helper.ext_utils.bot_utils import is_url, is_magnet, is_mega_link, is_gdrive_link, get_content_type, new_task, sync_to_async, is_rclone_path, is_telegram_link, arg_parser, fetch_user_tds, fetch_user_dumps, get_stats
 from bot.helper.ext_utils.exceptions import DirectDownloadLinkException
 from bot.helper.ext_utils.task_manager import task_utils
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 from bot.helper.mirror_utils.download_utils.aria2_download import add_aria2c_download
 from bot.helper.mirror_utils.download_utils.gd_download import add_gd_download
 from bot.helper.mirror_utils.download_utils.qbit_download import add_qb_torrent
@@ -467,22 +467,22 @@ async def wzmlxcb(_, query):
 
 
 async def mirror(client, message):
-    await send_react(message)
+    # await send_react(message)
     _mirror_leech(client, message)
 
 
 async def qb_mirror(client, message):
-    await send_react(message)
+    # await send_react(message)
     _mirror_leech(client, message, isQbit=True)
 
 
 async def leech(client, message):
-    await send_react(message)
+    # await send_react(message)
     _mirror_leech(client, message, isLeech=True)
 
 
 async def qb_leech(client, message):
-    await send_react(message)
+    # await send_react(message)
     _mirror_leech(client, message, isQbit=True, isLeech=True)
 
 
