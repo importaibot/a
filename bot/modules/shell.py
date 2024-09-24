@@ -6,14 +6,14 @@ from io import BytesIO
 from bot import LOGGER, bot
 from bot.helper.telegram_helper.message_utils import sendMessage, sendFile
 from bot.helper.ext_utils.bot_utils import cmd_exec, new_task
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 
 
 @new_task
 async def shell(_, message):
-    await send_react(message)
+    # await send_react(message)
     cmd = message.text.split(maxsplit=1)
     if len(cmd) == 1:
         await sendMessage(message, 'No command to execute was given.')
