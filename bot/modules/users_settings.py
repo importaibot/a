@@ -21,7 +21,7 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.mirror_utils.upload_utils.gdriveTools import GoogleDriveHelper
 from bot.helper.ext_utils.db_handler import DbManger
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 from bot.helper.ext_utils.bot_utils import getdailytasks, update_user_ldata, get_readable_file_size, sync_to_async, new_thread, is_gdrive_link
 from bot.helper.mirror_utils.upload_utils.ddlserver.gofile import Gofile
 from bot.helper.themes import BotTheme
@@ -277,7 +277,7 @@ async def update_user_settings(query, key=None, edit_type=None, edit_mode=None, 
     await editMessage(query if sdirect else query.message, msg, button, photo=thumbnail)
 
 async def user_settings(client, message):
-    await send_react(message)
+    # await send_react(message)
     if len(message.command) > 1 and (message.command[1] == '-s' or message.command[1] == '-set'):
         set_arg = message.command[2].strip() if len(message.command) > 2 else None
         user_id = message.from_user.id
@@ -704,7 +704,7 @@ async def edit_user_settings(client, query):
         await deleteMessage(message)
         
 async def send_users_settings(client, message):
-    await send_react(message)
+    # await send_react(message)
     text = message.text.split(maxsplit=1)
     userid = text[1] if len(text) > 1 else None
     if userid and not userid.isdigit():
