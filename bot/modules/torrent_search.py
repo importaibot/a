@@ -11,7 +11,7 @@ from bot.helper.ext_utils.telegraph_helper import telegraph
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.ext_utils.bot_utils import get_readable_file_size, sync_to_async, new_task, checking_access
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 from bot.helper.telegram_helper.button_build import ButtonMaker
 
 PLUGINS = []
@@ -211,7 +211,7 @@ async def __plugin_buttons(user_id):
 
 
 async def torrentSearch(_, message):
-    await send_react(message)
+    # await send_react(message)
     user_id = message.from_user.id
     buttons = ButtonMaker()
     key = message.text.split() if message.text else ['/cmd']
