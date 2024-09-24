@@ -20,7 +20,7 @@ from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.ext_utils.bot_utils import new_thread
 from bot.helper.ext_utils.exceptions import RssShutdownException
 from bot.helper.ext_utils.help_messages import RSS_HELP_MESSAGE
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 
 rss_dict_lock = Lock()
 handler_dict = {}
@@ -58,7 +58,7 @@ async def updateRssMenu(query):
 
 
 async def getRssMenu(client, message):
-    await send_react(message)
+    # await send_react(message)
     msg, button = await rssMenu(message)
     await sendMessage(message, msg, button)
 
