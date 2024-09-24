@@ -14,7 +14,7 @@ from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.message_utils import sendMessage, editMessage
 from bot.helper.ext_utils.bot_utils import get_readable_time
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 from bot.helper.telegram_helper.button_build import ButtonMaker
 
 imdb = Cinemagoer()
@@ -23,7 +23,7 @@ IMDB_GENRE_EMOJI = {"Action": "🚀", "Adult": "🔞", "Adventure": "🌋", "Ani
 LIST_ITEMS = 4
 
 async def imdb_search(_, message):
-    await send_react(message)
+    # await send_react(message)
     if ' ' in message.text:
         k = await sendMessage(message, '<code>Searching IMDB ...</code>')
         title = message.text.split(' ', 1)[1]
