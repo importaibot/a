@@ -21,7 +21,7 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.ext_utils.bot_utils import setInterval, sync_to_async, new_thread
 from bot.helper.ext_utils.db_handler import DbManger
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 from bot.helper.ext_utils.task_manager import start_from_queued
 from bot.helper.ext_utils.help_messages import default_desp
 from bot.helper.mirror_utils.rclone_utils.serve import rclone_serve_booter
@@ -1276,7 +1276,7 @@ async def edit_bot_settings(client, query):
 
 
 async def bot_settings(_, message):
-    await send_react(message)
+    # await send_react(message)
     msg, button = await get_buttons()
     globals()['START'] = 0
     await sendMessage(message, msg, button)
