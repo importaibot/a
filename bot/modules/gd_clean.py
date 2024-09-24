@@ -9,12 +9,12 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.mirror_utils.upload_utils.gdriveTools import GoogleDriveHelper
 from bot.helper.ext_utils.bot_utils import sync_to_async, new_task, is_gdrive_link, get_readable_file_size
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 
 
 @new_task
 async def driveclean(_, message):
-    await send_react(message)
+    # await send_react(message)
     args = message.text.split()
     if len(args) > 1:
         link = args[1].strip()
