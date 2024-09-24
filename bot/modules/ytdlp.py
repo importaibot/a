@@ -21,7 +21,7 @@ from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.listeners.tasks_listener import MirrorLeechListener
 from bot.helper.ext_utils.help_messages import YT_HELP_MESSAGE
 from bot.helper.ext_utils.bulk_links import extract_bulk_links
-from bot.helper.ext_utils.send_react import send_react
+# from bot.helper.ext_utils.send_react import send_react
 
 
 
@@ -524,12 +524,12 @@ async def _ytdl(client, message, isLeech=False, sameDir=None, bulk=[]):
 
 
 async def ytdl(client, message):
-    await send_react(message)
+    # await send_react(message)
     _ytdl(client, message)
 
 
 async def ytdlleech(client, message):
-    await send_react(message)
+    # await send_react(message)
     _ytdl(client, message, isLeech=True)
 
 
