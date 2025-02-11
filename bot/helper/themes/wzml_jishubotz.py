@@ -3,7 +3,7 @@ class WZMLStyle:
     # ----------------------
     # async def start(client, message) ---> __main__.py
     ST_BN1_NAME = '📢 Updates'
-    ST_BN1_URL = 'https://t.me/Madflix_Bots'
+    ST_BN1_URL = 'https://t.me/MadflixBotz'
     ST_BN2_NAME = '💬 Support'
     ST_BN2_URL = 'https://t.me/MadflixBots_Support'
     ST_MSG = '''I Can Upload Files, Links, Torrents, etc. to Telegram, Google Drive, DDL Servers and Rclone Supported Sites!\n\n<b>Type {help_command} to get a list of available commands</b>'''
@@ -30,7 +30,7 @@ class WZMLStyle:
 <b>Total Disk Write :</b> {disk_write}
 <b>U :</b> {disk_u} | <b>F :</b> {disk_f} | <b>T :</b> {disk_t}
 
-<a href="https://t.me/Madflix_Bots"><b>Co-Powered By @Madflix_Bots</b></a>
+<a href="https://t.me/MadflixBotz"><b>Co-Powered By @MadflixBotz</b></a>
     
     '''
     SYS_STATS = '''<b><u>SYSTEM STATISTICS</u></b>
@@ -54,7 +54,7 @@ class WZMLStyle:
 <b>Pkts Received :</b> {pkt_recv}k
 <b>Total I/O Data :</b> {tl_data}
 
-<a href="https://t.me/Madflix_Bots"><b>Co-Powered By @Madflix_Bots</b></a>
+<a href="https://t.me/MadflixBotz"><b>Co-Powered By @MadflixBotz</b></a>
     '''
     REPO_STATS = '''<b><u>REPO STATISTICS</u></b>
     
@@ -65,7 +65,7 @@ class WZMLStyle:
 
 <b>REMARKS :</b> <code>{remarks}</code>
 
-<a href="https://t.me/Madflix_Bots"><b>Co-Powered By @Madflix_Bots</b></a>
+<a href="https://t.me/MadflixBotz"><b>Co-Powered By @MadflixBotz</b></a>
     '''
     BOT_LIMITS = '''<b><u>BOT LIMITS</u></b>
     
@@ -83,7 +83,7 @@ class WZMLStyle:
 <b>User Tasks :</b> {UT}
 <b>Total Tasks :</b> {BT}
 
-<a href="https://t.me/Madflix_Bots"><b>Co-Powered By @Madflix_Bots</b></a>
+<a href="https://t.me/MadflixBotz"><b>Co-Powered By @MadflixBotz</b></a>
     '''
     # ---------------------
 
@@ -99,7 +99,7 @@ class WZMLStyle:
 <b>TimeZone :</b> {timz}
 <b>Version :</b> {version}
 
-<a href="https://t.me/Madflix_Bots"><b>Co-Powered By @Madflix_Bots</b></a>'''
+<a href="https://t.me/MadflixBotz"><b>Co-Powered By @MadflixBotz</b></a>'''
     RESTARTED = '''<b>Bot Restarted !</b>'''
     # ---------------------
 
